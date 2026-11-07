@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph's Learning Environment</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="d-flex align-items-center gap-2">
+            <img src="imgs/FeoStudios.png" alt="Logo" width="50" onclick="window.location.href='index.html'" onmouseover="this.style.cursor='pointer'">
+            <a class="navbar-brand mb-0" href="index.html">
+                Joseph's Learning Environment
+            </a>
+        </div>
+    </nav>
+
+    <main class="container " role="main">
+        <header>
+            <h1>Learning Environment Formulario/Registro de cuentas</h1>
+            <p>Validacion + mensajes custom, envio simulado sin recargar y accesibilidad</p>
+        </header>
+
+        <form id="sign-up" method="POST" novalidate>
+            <div class="row row-2">
+                <div class="mb-3 ">
+                    <label for="name" class="form-label">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required minlength="3" autocomplete="name" maxlength="50" placeholder="Ej. Juan Pérez">
+                    <p class="form-text">Mínimo 3 Caracteres</p>
+                    <p class="error" id="err-name" aria-live="polite"></p>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="Ej. juan@ejemplo.com">
+                <p class="form-text">Formato: ejemplo@dominio.com, Se validara el correo</p>
+                <p class="error" id="err-email" aria-live="polite"></p>
+            </div>
+
+            <div class="row row-2"></div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Edad</label>
+                    <input id="age" type="number" inputmode="numeric" min="18" max="99" placeholder="18-99">
+                    <p class="form-text">Opcional</p>
+                    <p class="error" id="err-age" aria-live="polite"></p>
+                </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" id="password" name="password" required minlength="8" autocomplete="new-password" placeholder="Mínimo 8 caracteres">
+                <p class="form-text">Mínimo 8 Caracteres, al menos una letra y un número</p>
+                <p class="error" id="err-password" aria-live="polite"></p>
+            </div>
+
+            <div class="mb-3 field">
+                <input id="terms" type="checkbox" class="check" required></input>
+                <label for="terms" class="form-label">Acepto los términos y condiciones</label>
+                <p class="error" id="err-terms" aria-live="polite"></p>
+            </div>
+        </form>
+
+        <section class="actions">
+            <button id="submibtn" type="submit" form="sign-up" class="btn-solid theme-primary">Crear cuenta</button>
+            <button id="resetbtn" type="reset" form="sign-up" class=" ghost theme-danger btn-solid btn-styled">Limpiar</button>
+            <output id="status" aria-live="polite"></output>
+        </section>
+    </main>
+    <script type="module" src="js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+</body>
+</html>
